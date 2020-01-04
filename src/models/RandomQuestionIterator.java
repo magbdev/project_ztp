@@ -1,11 +1,21 @@
 package models;
 
-public class RandomQuestionIterator extends MyIterator {
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+
+public class RandomQuestionIterator implements Iterator {
+
+    private List<Question> questions;
+    public RandomQuestionIterator(QuestionBaseList baseList){
+        this.questions = baseList.getQuestions();
+    }
+    private Random random = new Random(questions.size());
     @Override
     public boolean hasNext() {
-        return false;
+        return true;
     }
     public Question next(){
-        return new Question();
+        return questions.get(random.nextInt());
     }
 }
