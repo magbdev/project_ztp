@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:controller="controllers.MainWindowController" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,12 +19,12 @@
                   <Insets top="30.0" />
                </StackPane.margin>
             </Text>
-            <Button mnemonicParsing="false" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
+            <Button fx:id="adventureButton" mnemonicParsing="false" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="50.0" />
                </StackPane.margin>
             </Button>
-            <Button mnemonicParsing="false" text="TRYB TESTU" StackPane.alignment="TOP_CENTER">
+            <Button fx:id="testButton" mnemonicParsing="false" text="TRYB TESTU" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="90.0" />
                </StackPane.margin>
@@ -38,23 +38,23 @@
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza pytań" />
-                  <Button mnemonicParsing="false" text="Dodaj pytanie" />
-                  <Button mnemonicParsing="false" text="Edytuj pytanie" />
-                  <Button mnemonicParsing="false" text="Usuń pytanie" />
+                  <Button fx:id="addQuestionButton" mnemonicParsing="false" text="Dodaj pytanie" />
+                  <Button fx:id="editQuestionButton" mnemonicParsing="false" text="Edytuj pytanie" />
+                  <Button fx:id="deleteQuestionButton" mnemonicParsing="false" text="Usuń pytanie" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza słówek" />
-                  <Button mnemonicParsing="false" text="Dodaj słówko" />
-                  <Button mnemonicParsing="false" text="Edytuj słówko" />
-                  <Button mnemonicParsing="false" text="Usuń słówko" />
+                  <Button fx:id="addAnswerButton" mnemonicParsing="false" text="Dodaj słówko" />
+                  <Button fx:id="editAnswerButton" mnemonicParsing="false" text="Edytuj słówko" />
+                  <Button fx:id="deleteAnswerButton" mnemonicParsing="false" text="Usuń słówko" />
                </children>
             </VBox>
          </children>
       </HBox>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" text="Statystyka" BorderPane.alignment="CENTER" />
+      <Button fx:id="statisticButton" mnemonicParsing="false" text="Statystyka" BorderPane.alignment="CENTER" onAction="#openStatistics" />
    </bottom>
 </BorderPane>
