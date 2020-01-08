@@ -1,8 +1,21 @@
 package models;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable  {
+
+    static final long serialVersionUID = 7445835812753532432L;
     private String question;
     private String correctAnswer;
+
+    public Question(String question, String correctAnswer) {
+        this.question = question;
+        this.correctAnswer = correctAnswer;
+    }
+
+    public Question() {
+
+    }
 
     public String getQuestion() {
         return question;
@@ -19,4 +32,6 @@ public class Question {
     public void setCorrectAnswer(String correctAnswer) {
         this.correctAnswer = correctAnswer;
     }
+
+
 }
