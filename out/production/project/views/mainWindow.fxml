@@ -19,7 +19,7 @@
                   <Insets top="30.0" />
                </StackPane.margin>
             </Text>
-            <Button fx:id="adventureButton" mnemonicParsing="false" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
+            <Button fx:id="adventureButton" mnemonicParsing="false" onAction="#adventure" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="50.0" />
                </StackPane.margin>
@@ -38,7 +38,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza pytań" />
-                  <Button fx:id="addQuestionButton" mnemonicParsing="false" text="Dodaj pytanie" />
+                  <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#addQuestion" text="Dodaj pytanie" />
                   <Button fx:id="editQuestionButton" mnemonicParsing="false" text="Edytuj pytanie" />
                   <Button fx:id="deleteQuestionButton" mnemonicParsing="false" text="Usuń pytanie" />
                </children>
@@ -55,6 +55,6 @@
       </HBox>
    </center>
    <bottom>
-      <Button fx:id="statisticButton" mnemonicParsing="false" text="Statystyka" BorderPane.alignment="CENTER" onAction="#openStatistics" />
+      <Button fx:id="statisticButton" mnemonicParsing="false" onAction="#openStatistics" text="Statystyka" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

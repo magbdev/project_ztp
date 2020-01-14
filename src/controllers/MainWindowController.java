@@ -19,6 +19,8 @@ public class MainWindowController extends Application {
     private Button adventureButton,testButton,statisticButton,addQuestionButton,editQuestionButton,deleteQuestionButton,addAnswerButton,editAnswerButton,deleteAnswerButton;
 
     public Statistics s = Statistics.getInstance();
+    public AddQuestionController addQuestionController = new AddQuestionController();
+    public ModeController modeController = new ModeController();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -34,6 +36,14 @@ public class MainWindowController extends Application {
     public void openStatistics() throws IOException {
         s.draw();
 
+    }
+    public void addQuestion() throws IOException{
+        addQuestionController.open();
+    }
+
+    public void adventure() throws IOException{
+        modeController.setMode(1);
+        modeController.open();
     }
 
     public static void main(String[] args) {
