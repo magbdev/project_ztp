@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="stackPane" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TaskController">
+   <children>
+      <Label fx:id="questionLabel" text="Pytanie">
+         <StackPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </StackPane.margin>
+      </Label>
+      <RadioButton fx:id="a" mnemonicParsing="false" text="A">
+         <StackPane.margin>
+            <Insets left="20.0" top="50.0" />
+         </StackPane.margin>
+      </RadioButton>
+      <RadioButton fx:id="b" mnemonicParsing="false" text="B">
+         <StackPane.margin>
+            <Insets left="20.0" top="80.0" />
+         </StackPane.margin>
+      </RadioButton>
+      <RadioButton fx:id="c" mnemonicParsing="false" text="C">
+         <StackPane.margin>
+            <Insets left="20.0" top="110.0" />
+         </StackPane.margin>
+      </RadioButton>
+      <Button fx:id="nextButton" mnemonicParsing="false" text="Dalej">
+         <StackPane.margin>
+            <Insets left="280.0" top="180.0" />
+         </StackPane.margin>
+      </Button>
+      <RadioButton fx:id="d" mnemonicParsing="false" text="D">
+         <StackPane.margin>
+            <Insets left="180.0" top="50.0" />
+         </StackPane.margin>
+      </RadioButton>
+      <RadioButton fx:id="e" mnemonicParsing="false" text="E">
+         <StackPane.margin>
+            <Insets left="180.0" top="80.0" />
+         </StackPane.margin>
+      </RadioButton>
+   </children>
+</StackPane>
