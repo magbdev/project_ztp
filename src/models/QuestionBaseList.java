@@ -2,7 +2,7 @@ package models;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class QuestionBaseList {
     private ArrayList<Question> questions;
@@ -37,7 +37,7 @@ public class QuestionBaseList {
             ioe.printStackTrace();
         }
     }
-    public List<Answer> getAnswers(){
+    public ArrayList<Answer> getAnswers(){
         try {
             FileInputStream fis = new FileInputStream("listAnswer");
             ObjectInputStream ois = new ObjectInputStream(fis);

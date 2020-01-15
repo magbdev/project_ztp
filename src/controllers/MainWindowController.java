@@ -23,6 +23,9 @@ public class MainWindowController extends Application {
     public ModeController modeController = new ModeController();
     public EditQuestionController editQuestionController = new EditQuestionController();
     public DeleteQuestionController deleteQuestionController = new DeleteQuestionController();
+    public AddAnswerController addAnswerController = new AddAnswerController();
+    public EditAnswerController editAnswerController = new EditAnswerController();
+    public DeleteAnswerController deleteAnswerController = new DeleteAnswerController();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -54,6 +57,18 @@ public class MainWindowController extends Application {
 
     public void deleteQuestion() throws IOException{
         deleteQuestionController.open();
+    }
+
+    public void addAnswer() throws IOException{
+        addAnswerController.open();
+    }
+
+    public void editAnswer() throws IOException{
+        editAnswerController.open();
+    }
+
+    public void deleteAnswer() throws IOException{
+        deleteAnswerController.open();
     }
     public static void main(String[] args) {
         launch(args);

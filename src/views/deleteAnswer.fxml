@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<StackPane fx:controller="controllers.DeleteAnswerController" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="deleteButton" mnemonicParsing="false" text="Usuń" onAction="#delete">
+         <StackPane.margin>
+            <Insets left="20.0" top="70.0" />
+         </StackPane.margin>
+      </Button>
+      <Label fx:id="answerLabel" text="słówko">
+         <StackPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </StackPane.margin>
+      </Label>
+      <Button fx:id="nextButton" mnemonicParsing="false" text="Następne" onAction="#setAnswer">
+         <StackPane.margin>
+            <Insets left="200.0" top="70.0" />
+         </StackPane.margin>
+      </Button>
+   </children>
+</StackPane>
