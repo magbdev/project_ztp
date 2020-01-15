@@ -39,8 +39,8 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza pytań" />
                   <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#addQuestion" text="Dodaj pytanie" />
-                  <Button fx:id="editQuestionButton" mnemonicParsing="false" text="Edytuj pytanie" />
-                  <Button fx:id="deleteQuestionButton" mnemonicParsing="false" text="Usuń pytanie" />
+                  <Button fx:id="editQuestionButton" mnemonicParsing="false" onAction="#editQuestion" text="Edytuj pytanie" />
+                  <Button fx:id="deleteQuestionButton" mnemonicParsing="false" onAction="#deleteQuestion" text="Usuń pytanie" />
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">

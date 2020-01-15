@@ -21,7 +21,7 @@ public class AddQuestionController {
     @FXML
     private Button addButton;
 
-    ArrayList<Question> listQuestion = new ArrayList<>();
+    ArrayList<Question> listQuestion;
 
     public void setListQuestion(ArrayList<Question> listQuestion) {
         this.listQuestion = listQuestion;
@@ -48,44 +48,16 @@ public class AddQuestionController {
 
     public void addQuestion() {
 
-        try {
-            FileInputStream fis = new FileInputStream("listQuestion");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-
-            listQuestion = (ArrayList) ois.readObject();
-
-            ois.close();
-            fis.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            System.out.println("Class not found");
-            e.printStackTrace();
-        }
-
-
         Question q = new Question();
         q.setQuestion(questionField.getText());
         q.setCorrectAnswer(answerField.getText());
+        //listQuestion.add(q);
+        QuestionBaseList list = new QuestionBaseList();
+        listQuestion = list.getQuestions();
         listQuestion.add(q);
-        //    new QuestionBaseList().getQuestions().add(q);
-        saveQuestion();
+        list.saveQuestions(listQuestion);
 
     }
-
-    private void saveQuestion () {
-        try {
-            FileOutputStream fos = new FileOutputStream("listQuestion");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(listQuestion);
-            oos.close();
-            fos.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
-
-    }
-
 
 
 

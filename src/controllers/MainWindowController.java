@@ -21,6 +21,8 @@ public class MainWindowController extends Application {
     public Statistics s = Statistics.getInstance();
     public AddQuestionController addQuestionController = new AddQuestionController();
     public ModeController modeController = new ModeController();
+    public EditQuestionController editQuestionController = new EditQuestionController();
+    public DeleteQuestionController deleteQuestionController = new DeleteQuestionController();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -46,6 +48,13 @@ public class MainWindowController extends Application {
         modeController.open();
     }
 
+    public void editQuestion() throws IOException{
+        editQuestionController.open();
+    }
+
+    public void deleteQuestion() throws IOException{
+        deleteQuestionController.open();
+    }
     public static void main(String[] args) {
         launch(args);
     }
