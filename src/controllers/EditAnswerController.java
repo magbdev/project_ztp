@@ -25,8 +25,8 @@ public class EditAnswerController implements Initializable {
     private Button saveButton,nextButton;
 
     QuestionBaseList baseList = new QuestionBaseList();
-    ArrayList<Answer> list = baseList.getAnswers();
-    Iterator<Answer> iterator = list.iterator();
+    ArrayList<Answer> listAnswers = baseList.getAnswers();
+    Iterator<Answer> iterator = listAnswers.iterator();
     Answer a;
     public void open() throws IOException {
         Stage stage = new Stage();
@@ -50,7 +50,7 @@ public class EditAnswerController implements Initializable {
 
     public void save(){
         a.setAnswer(answerField.getText());
-        baseList.saveAnswers(list);
+        baseList.saveAnswers(listAnswers);
     }
 
     @Override

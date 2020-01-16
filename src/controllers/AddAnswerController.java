@@ -21,7 +21,7 @@ public class AddAnswerController {
     private Button addButton;
 
     QuestionBaseList baseList = new QuestionBaseList();
-    ArrayList<Answer> list = baseList.getAnswers();
+    ArrayList<Answer> listAnswers = baseList.getAnswers();
 
     public void open() throws IOException{
         Stage stage = new Stage();
@@ -40,7 +40,9 @@ public class AddAnswerController {
     public void addAnswer(){
         Answer a = new Answer();
         a.setAnswer(answerField.getText());
-        list.add(a);
-        baseList.saveAnswers(list);
+        listAnswers.add(a);
+        baseList.saveAnswers(listAnswers);
+
     }
+
 }

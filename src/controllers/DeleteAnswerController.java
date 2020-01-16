@@ -25,8 +25,8 @@ public class DeleteAnswerController implements Initializable {
     private Button nextButton,deleteButton;
 
     QuestionBaseList baseList = new QuestionBaseList();
-    ArrayList<Answer> list = baseList.getAnswers();
-    Iterator<Answer> iterator = list.iterator();
+    ArrayList<Answer> listAnswers = baseList.getAnswers();
+    Iterator<Answer> iterator = listAnswers.iterator();
     Answer a;
 
     public void open() throws IOException{
@@ -52,7 +52,7 @@ public class DeleteAnswerController implements Initializable {
 
     public void delete(){
         iterator.remove();
-        baseList.saveAnswers(list);
+        baseList.saveAnswers(listAnswers);
     }
 
     @Override
