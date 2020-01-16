@@ -8,7 +8,7 @@ public class QuestionBaseList {
     private ArrayList<Question> questions;
     private ArrayList<Answer> answers;
 
-    public ArrayList<Question> getQuestions(){
+    public ArrayList<Question> getQuestions() {
         try {
             FileInputStream fis = new FileInputStream("listQuestion");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -26,7 +26,8 @@ public class QuestionBaseList {
         }
         return questions;
     }
-    public void saveQuestions(ArrayList<Question> listQuestion){
+
+    public void saveQuestions(ArrayList<Question> listQuestion) {
         try {
             FileOutputStream fos = new FileOutputStream("listQuestion");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -37,9 +38,10 @@ public class QuestionBaseList {
             ioe.printStackTrace();
         }
     }
-    public ArrayList<Answer> getAnswers(){
+
+    public ArrayList<Answer> getAnswers() {
         try {
-            FileInputStream fis = new FileInputStream("listAnswer");
+            FileInputStream fis = new FileInputStream("listAnswers");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
             answers = (ArrayList) ois.readObject();
@@ -52,12 +54,13 @@ public class QuestionBaseList {
             System.out.println("Class not found");
             e.printStackTrace();
         }
+
         return answers;
     }
 
-    public void saveAnswers(ArrayList<Answer> listAnswer){
+    public void saveAnswers(ArrayList<Answer> listAnswer) {
         try {
-            FileOutputStream fos = new FileOutputStream("listAnswer");
+            FileOutputStream fos = new FileOutputStream("listAnswers");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(listAnswer);
             oos.close();
