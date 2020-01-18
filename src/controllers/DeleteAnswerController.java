@@ -26,7 +26,7 @@ public class DeleteAnswerController implements Initializable {
 
     QuestionBaseList baseList = new QuestionBaseList();
     ArrayList<Answer> listAnswers = baseList.getAnswers();
-    Iterator<Answer> iterator = listAnswers.iterator();
+    Iterator<Answer> iteratorAnswer = listAnswers.iterator();
     Answer a;
 
     public void open() throws IOException{
@@ -44,14 +44,14 @@ public class DeleteAnswerController implements Initializable {
     }
 
     public void setAnswer(){
-        if(iterator.hasNext()) {
-            a = iterator.next();
+        if(iteratorAnswer.hasNext()) {
+            a = iteratorAnswer.next();
             answerLabel.setText(a.getAnswer());
         }
     }
 
     public void delete(){
-        iterator.remove();
+        iteratorAnswer.remove();
         baseList.saveAnswers(listAnswers);
     }
 

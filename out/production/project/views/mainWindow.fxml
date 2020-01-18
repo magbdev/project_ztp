@@ -46,9 +46,9 @@
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza słówek" />
-                  <Button fx:id="addAnswerButton" mnemonicParsing="false" text="Dodaj słówko" />
-                  <Button fx:id="editAnswerButton" mnemonicParsing="false" text="Edytuj słówko" />
-                  <Button fx:id="deleteAnswerButton" mnemonicParsing="false" text="Usuń słówko" />
+                  <Button fx:id="addAnswerButton" mnemonicParsing="false" text="Dodaj słówko" onAction="#addAnswer" />
+                  <Button fx:id="editAnswerButton" mnemonicParsing="false" text="Edytuj słówko" onAction="#editAnswer"/>
+                  <Button fx:id="deleteAnswerButton" mnemonicParsing="false" text="Usuń słówko" onAction="#deleteAnswer"/>
                </children>
             </VBox>
          </children>
