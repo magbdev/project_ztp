@@ -26,7 +26,7 @@ public class MainWindowController extends Application {
     public AddAnswerController addAnswerController = new AddAnswerController();
     public EditAnswerController editAnswerController = new EditAnswerController();
     public DeleteAnswerController deleteAnswerController = new DeleteAnswerController();
-
+    private static Score score = new Score("Ma",11);
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/views/mainWindow.fxml"));
@@ -39,6 +39,7 @@ public class MainWindowController extends Application {
         stage.show();
     }
     public void openStatistics() throws IOException {
+        s.addScore(score);
         s.draw();
 
     }
@@ -47,8 +48,13 @@ public class MainWindowController extends Application {
     }
 
     public void adventure() throws IOException{
-        modeController.setMode(1);
         modeController.open();
+        modeController.setMode(1);
+    }
+
+    public void test() throws IOException{
+        modeController.open();
+        modeController.setMode(2);
     }
 
     public void editQuestion() throws IOException{

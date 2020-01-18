@@ -15,31 +15,44 @@
          <StackPane.margin>
             <Insets left="20.0" top="50.0" />
          </StackPane.margin>
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="b" mnemonicParsing="false" text="B">
+      <RadioButton fx:id="b" mnemonicParsing="false" text="B" toggleGroup="$toggleGroup">
          <StackPane.margin>
             <Insets left="20.0" top="80.0" />
          </StackPane.margin>
       </RadioButton>
-      <RadioButton fx:id="c" mnemonicParsing="false" text="C">
+      <RadioButton fx:id="c" mnemonicParsing="false" text="C" toggleGroup="$toggleGroup">
          <StackPane.margin>
             <Insets left="20.0" top="110.0" />
          </StackPane.margin>
       </RadioButton>
-      <Button fx:id="nextButton" mnemonicParsing="false" text="Dalej">
+      <Button fx:id="nextButton" mnemonicParsing="false" text="Dalej" onAction="#setNextButton">
          <StackPane.margin>
             <Insets left="280.0" top="180.0" />
          </StackPane.margin>
       </Button>
-      <RadioButton fx:id="d" mnemonicParsing="false" text="D">
+      <RadioButton fx:id="d" mnemonicParsing="false" text="D" toggleGroup="$toggleGroup">
          <StackPane.margin>
             <Insets left="180.0" top="50.0" />
          </StackPane.margin>
       </RadioButton>
-      <RadioButton fx:id="e" mnemonicParsing="false" text="E">
+      <RadioButton fx:id="e" mnemonicParsing="false" text="E" toggleGroup="$toggleGroup">
          <StackPane.margin>
             <Insets left="180.0" top="80.0" />
          </StackPane.margin>
       </RadioButton>
+      <Label fx:id="answerLabel" text="odpowiedz" visible="false">
+         <StackPane.margin>
+            <Insets left="20.0" top="140.0" />
+         </StackPane.margin>
+      </Label>
+      <Button fx:id="showAnswerButton" mnemonicParsing="false" text="Pokaż" visible="false">
+         <StackPane.margin>
+            <Insets left="20.0" top="180.0" />
+         </StackPane.margin>
+      </Button>
    </children>
 </StackPane>

@@ -8,20 +8,30 @@ import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.Level1;
+import models.Level2;
+import models.Level3;
 
 import java.io.IOException;
 
 public class ModeController {
 
-    private int mode;
+    private static int mode;
     public void setMode(int mode){
         this.mode = mode;
     }
     @FXML
-    private Button level1Button,level2Button,level3Button;
+    private Button level1Button = new Button(),level2Button,level3Button;
     private TaskController task = new TaskController();
     public void setLevel1Button() throws IOException {
         task.set(new Level1(),mode);
+        task.open();
+    }
+    public void setLevel2Button() throws IOException{
+        task.set(new Level2(),mode);
+        task.open();
+    }
+    public void setLevel3Button() throws IOException{
+        task.set(new Level3(),mode);
         task.open();
     }
     public void open() throws IOException{

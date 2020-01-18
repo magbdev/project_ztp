@@ -11,13 +11,13 @@ public class RandomAnswerIterator implements Iterator {
         this.answers = baseList.getAnswers();
     }
 
-    private Random random = new Random(answers.size());
+    private Random random = new Random();
 
     @Override
     public boolean hasNext() {
         return true;
     }
     public Answer next(){
-        return answers.get(random.nextInt());
+        return answers.get(random.nextInt(answers.size()));
     }
 }

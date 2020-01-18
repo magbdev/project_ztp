@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Statistics implements Initializable {
+public class Statistics implements Initializable{
     private static Statistics instance=null;
     public static Statistics getInstance(){
         instance = new Statistics();
@@ -23,20 +23,13 @@ public class Statistics implements Initializable {
     }
 
     public TableView<Score> scoreTable = new TableView<Score>();
-    public TableColumn<Score,String> nameColumn;
-    public TableColumn<Score,Integer> scoreColumn;
-
-    ObservableList<Score> data = FXCollections.observableArrayList(
-            new Score("Magda",9)
-    );
-
-
+    public TableColumn<Score,String> nameColumn = new TableColumn<>("Imię");
+    public TableColumn<Score,Integer> scoreColumn = new TableColumn<>("Wynik");
 
     public void addScore(Score score){
-        scoreTable.getItems().add(score);
+        data.add(score);
+        scoreTable.setItems(data);
     }
-
-
 
     public void draw() throws IOException {
         Stage stage = new Stage();
@@ -52,11 +45,15 @@ public class Statistics implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    private ObservableList<Score> data = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
-        scoreTable.setItems(data);
-    }
+         scoreTable.setEditable(true);
+         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+         scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
+         scoreTable.getColumns().addAll(nameColumn,scoreColumn);
+         scoreTable.setItems(data);
+     }
+
 }
