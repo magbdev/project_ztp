@@ -1,15 +1,20 @@
 package controllers;
 
+
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 import models.Level;
+import models.Score;
 import models.Statistics;
 
 import java.io.IOException;
@@ -53,7 +58,7 @@ public class TaskController implements Initializable {
 
     }
     AtomicInteger licznik= new AtomicInteger(0);
-    private int result=0;
+    private static int result=0;
     public void setNextButton() throws IOException{
         if(toggleGroup.getSelectedToggle() == null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -66,7 +71,11 @@ public class TaskController implements Initializable {
                 System.out.println(result);
             }
             if(licznik.get() == 4 && mode == 2){
+                Statistics.getInstance().setResult(result);
                 Statistics.getInstance().draw();
+                nextButton.getScene().getWindow().hide();
+                result =0;
+                licznik.set(0);
             }
             else{
                 licznik.getAndIncrement();

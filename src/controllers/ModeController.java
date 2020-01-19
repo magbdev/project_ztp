@@ -20,7 +20,7 @@ public class ModeController {
         this.mode = mode;
     }
     @FXML
-    private Button level1Button = new Button(),level2Button,level3Button;
+    private Button level1Button,level2Button,level3Button;
     private TaskController task = new TaskController();
     public void setLevel1Button() throws IOException {
         task.set(new Level1(),mode);
