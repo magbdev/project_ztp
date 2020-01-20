@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Statistics {
@@ -23,7 +24,16 @@ public class Statistics {
         //}
         return instance;
     }
-    @FXML
+
+  ScoreBaseList baseList = new ScoreBaseList();
+    ArrayList<Score> listStatistics = baseList.getStatistics();
+
+
+
+
+
+
+        @FXML
     public TextField nameField = new TextField();
     @FXML
     public Button addScoreButton;
@@ -34,9 +44,9 @@ public class Statistics {
     public TableColumn<Score,String> nameColumn = new TableColumn<>("Imię");
     public TableColumn<Score,Integer> scoreColumn = new TableColumn<>("Wynik");
 
-    private ObservableList<Score> data = FXCollections.observableArrayList(
-        new Score("name",3)
-    );
+    private ObservableList<Score> data = FXCollections.observableArrayList(listStatistics);
+
+
 
     public void setResult(int result){
         Statistics.result =result;
@@ -44,9 +54,19 @@ public class Statistics {
 
     public void addScore(){
         Score score = new Score(nameField.getText(),result);
-        data.add(score);
+       // data.add(score);
+
+
+        listStatistics.add(score);
+       Score score1= new Score("Beata",5);
+       listStatistics.add(score1);
+        baseList.saveStatistics(listStatistics);
+
+
         scoreTable.setItems(data);
         scoreTable.refresh();
+
+
     }
 
     public void draw() throws IOException {

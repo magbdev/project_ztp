@@ -3,7 +3,10 @@ package models;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-public class Score {
+import java.io.Serializable;
+
+public class Score implements Serializable {
+    static final long serialVersionUID = 7445835812753532432L;
     private SimpleStringProperty name;
     private SimpleIntegerProperty score;
 
