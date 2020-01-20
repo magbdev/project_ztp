@@ -71,8 +71,9 @@ public class TaskController implements Initializable {
                 System.out.println(result);
             }
             if(licznik.get() == 4 && mode == 2){
-              Statistics.getInstance().setResult(result);
-              Statistics.getInstance().draw();
+                AddScoreController addScoreController = new AddScoreController();
+                addScoreController.setResult(result);
+                addScoreController.open();
                 nextButton.getScene().getWindow().hide();
                 result =0;
                 licznik.set(0);

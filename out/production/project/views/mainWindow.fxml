@@ -55,6 +55,6 @@
       </HBox>
    </center>
    <bottom>
-      <Button fx:id="statisticButton" mnemonicParsing="false" onAction="#openStatistics" text="Statystyka" BorderPane.alignment="CENTER" />
+      <Button fx:id="addScoreButton" mnemonicParsing="false" onAction="#openStatistics" text="Statystyka" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

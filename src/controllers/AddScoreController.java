@@ -1,11 +1,11 @@
 package controllers;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import models.*;
@@ -15,50 +15,33 @@ import java.util.ArrayList;
 
 public class AddScoreController {
 
-
-    ArrayList<Score> listStatistics;
-
-
-    public void setListStatistics(ArrayList<Score> listQuestion) {
-        this.listStatistics = listStatistics;
-    }
-
-    public ArrayList<Score> getListStatistics() {
-        return listStatistics;
-    }
+    Statistics statistics = Statistics.getInstance();
+    private static int result;
 
     @FXML
     public TextField nameField = new TextField();
     @FXML
-    public Button addScoreButton;
+    public Button addButton;
     @FXML
-    public Label Name, Score;
+    public Label scoreLabel = new Label();
 
-    private static int result = 0;
-
-
-    public void addScore() {
-        Score score = new Score(nameField.getText(), result);
-        listStatistics.add(score);
-        Score score1 = new Score("Beata", 5);
-        listStatistics.add(score1);
-        ScoreBaseList list = new ScoreBaseList();
-        listStatistics = list.getStatistics();
-        listStatistics.add(score);
-        list.saveStatistics(listStatistics);
+    public void addScore() throws IOException{
+        if(nameField.getText() != null) {
+            statistics.addScore(nameField.getText(), result);
+            addButton.getScene().getWindow().hide();
+            statistics.draw();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Wpisz imię");
+            alert.showAndWait();
+        }
     }
 
-    Score score = new Score("df", 3);
-
-    public void setScore() {
-
-        Name.setText(score.getName());
-        Score.setText(String.valueOf(score.getScore()));
+    public void setResult(int result){
+        this.result = result;
     }
 
-    public void setResult(int result) {
-        AddScoreController.result = result;
-    }
 
     public void open() throws IOException {
         Stage stage = new Stage();
@@ -71,7 +54,9 @@ public class AddScoreController {
         stage.setScene(scene);
         stage.show();
     }
-
+    public void initialize(){
+        scoreLabel.setText(String.valueOf(result));
+    }
 
 }
 
