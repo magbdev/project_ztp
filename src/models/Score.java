@@ -7,27 +7,30 @@ import java.io.Serializable;
 
 public class Score implements Serializable {
     static final long serialVersionUID = 7445835812753532432L;
-    private SimpleStringProperty name;
-    private SimpleIntegerProperty score;
+    private String name;
+    private Integer score;
 
-    public Score(String name,int score){
-        this.name = new SimpleStringProperty(name);
-        this.score = new SimpleIntegerProperty(score);
+    public Score(String name, Integer score) {
+        this.name = name;
+        this.score = score;
     }
+public Score()
+{
 
+}
     public String getName() {
-        return name.get();
+        return name;
     }
 
     public void setName(String name) {
-        this.name = new SimpleStringProperty(name);
+        this.name = name;
     }
 
-    public int getScore() {
-        return score.get();
+    public Integer getScore() {
+        return score;
     }
 
-    public void setScore(int score) {
-        this.score = new SimpleIntegerProperty(score);
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class ScoreBaseList {
     private ArrayList<Score> score;
 
-
     public ArrayList<Score> getStatistics() {
         try {
             FileInputStream fis = new FileInputStream("listStatistics");
@@ -26,6 +25,7 @@ public class ScoreBaseList {
         }
         return score;
     }
+
 
     public void saveStatistics(ArrayList<Score> listStatistics) {
         try {
