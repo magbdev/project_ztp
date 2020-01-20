@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class MainWindowController extends Application {
 
+
     @FXML
     private Button adventureButton,testButton,statisticButton,addQuestionButton,editQuestionButton,deleteQuestionButton,addAnswerButton,editAnswerButton,deleteAnswerButton;
 
@@ -26,6 +27,7 @@ public class MainWindowController extends Application {
     public AddAnswerController addAnswerController = new AddAnswerController();
     public EditAnswerController editAnswerController = new EditAnswerController();
     public DeleteAnswerController deleteAnswerController = new DeleteAnswerController();
+    public AddScoreController addScoreController = new AddScoreController();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -74,6 +76,10 @@ public class MainWindowController extends Application {
 
     public void deleteAnswer() throws IOException{
         deleteAnswerController.open();
+    }
+
+    public void addscoreController() throws IOException{
+        addScoreController.open();
     }
     public static void main(String[] args) {
         launch(args);
