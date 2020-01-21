@@ -1,0 +1,22 @@
+.button{
+-fx-background-color: #4d4dff;
+-fx-text-fill: #ffffff;
+-fx-padding: 8 8 8 8;
+-fx-font-weight: bold;
+-fx-effect: dropshadow(one-pass-box,gray,14,0.0,6,0)
+}
+.root{
+-fx-background-color: #f0f0f0
+}
+#title{
+-fx-font-size: 30px;
+-fx-font-weight: bold
+}
+.Label,.RadioButton{
+-fx-background-color: #4d4dff;
+-fx-text-fill: #ffffff;
+-fx-padding: 8 8 8 8;
+-fx-font-weight: bold;
+-fx-effect: dropshadow(one-pass-box,gray,14,0.0,6,0)
+}
+

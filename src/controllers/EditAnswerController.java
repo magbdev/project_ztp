@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -34,7 +35,6 @@ public class EditAnswerController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/editAnswer.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -52,6 +52,9 @@ public class EditAnswerController implements Initializable {
     public void save(){
         a.setAnswer(answerField.getText());
         baseList.saveAnswers(listAnswers);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Słówko zostało zapisane");
+        alert.showAndWait();
     }
 
     @Override

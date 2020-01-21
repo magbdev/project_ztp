@@ -39,7 +39,6 @@ public class EditQuestionController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/editQuestion.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -63,7 +62,9 @@ public class EditQuestionController implements Initializable {
         q.setQuestion(questionField.getText());
         q.setCorrectAnswer(answerField.getText());
         baseList.saveQuestions(list);
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Odpowiedź została zapisana");
+        alert.showAndWait();
     }
 
     @Override

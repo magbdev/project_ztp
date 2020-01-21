@@ -6,9 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import models.Score;
 import models.Statistics;
 
 import java.io.IOException;
@@ -27,7 +25,6 @@ public class MainWindowController extends Application {
     public AddAnswerController addAnswerController = new AddAnswerController();
     public EditAnswerController editAnswerController = new EditAnswerController();
     public DeleteAnswerController deleteAnswerController = new DeleteAnswerController();
-    public AddScoreController addScoreController = new AddScoreController();
 
     @Override
     public void start(Stage stage) throws Exception {

@@ -2,21 +2,15 @@
 package controllers;
 
 
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-import javafx.stage.WindowEvent;
 import models.Level;
-import models.Score;
-import models.Statistics;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,7 +44,6 @@ public class TaskController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/task.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -73,9 +66,9 @@ public class TaskController implements Initializable {
                 System.out.println(result);
             }
             if(licznik.get() == 4 && mode == 2){
-                AddScoreController addScoreController = new AddScoreController();
-                addScoreController.setResult(result);
-                addScoreController.open();
+                AddStaticticController addStaticticController = new AddStaticticController();
+                addStaticticController.setResult(result);
+                addStaticticController.open();
                 nextButton.getScene().getWindow().hide();
                 result =0;
                 licznik.set(0);

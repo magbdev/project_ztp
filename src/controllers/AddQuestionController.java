@@ -3,6 +3,7 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
@@ -37,7 +38,6 @@ public class AddQuestionController {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/addQuestion.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -51,12 +51,14 @@ public class AddQuestionController {
         Question q = new Question();
         q.setQuestion(questionField.getText());
         q.setCorrectAnswer(answerField.getText());
-        //listQuestion.add(q);
         QuestionBaseList list = new QuestionBaseList();
         listQuestion = list.getQuestions();
         listQuestion.add(q);
         list.saveQuestions(listQuestion);
-
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Odpowiedź została dodana");
+        alert.showAndWait();
+        addButton.getScene().getWindow().hide();
 
     }
 

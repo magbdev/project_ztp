@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
@@ -35,7 +36,6 @@ public class DeleteQuestionController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/deleteQuestion.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -50,11 +50,18 @@ public class DeleteQuestionController implements Initializable {
             questionLabel.setText(q.getQuestion());
             answerLabel.setText(q.getCorrectAnswer());
         }
+        else{
+            nextButton.getScene().getWindow().hide();
+        }
     }
 
     public void delete(){
         iterator.remove();
         baseList.saveQuestions(list);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Odpowiedź została usunięta");
+        alert.showAndWait();
+        setQuestion();
     }
 
     @Override

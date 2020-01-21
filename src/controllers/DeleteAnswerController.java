@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
@@ -35,7 +36,6 @@ public class DeleteAnswerController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/views/deleteAnswer.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -49,11 +49,18 @@ public class DeleteAnswerController implements Initializable {
             a = iteratorAnswer.next();
             answerLabel.setText(a.getAnswer());
         }
+        else{
+            nextButton.getScene().getWindow().hide();
+        }
     }
 
     public void delete(){
         iteratorAnswer.remove();
         baseList.saveAnswers(listAnswers);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Słówko zostało usunięte");
+        alert.showAndWait();
+        setAnswer();
     }
 
     @Override

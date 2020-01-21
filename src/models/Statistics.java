@@ -30,9 +30,6 @@ public class Statistics {
 
     private ObservableList<Score> data = FXCollections.observableArrayList(listStatistics);
 
-    /*public void setResult(int result){
-        Statistics.result =result;
-    }*/
 
     public void addScore(String name, int result){
         Score score = new Score(name,result);
