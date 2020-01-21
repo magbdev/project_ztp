@@ -51,6 +51,7 @@ public class AddScoreController {
         Scene scene = new Scene(fxmlLoader.load());
         //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.initModality(Modality.APPLICATION_MODAL);
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
     }

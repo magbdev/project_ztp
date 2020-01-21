@@ -35,8 +35,9 @@ public class MainWindowController extends Application {
         stage.setTitle("QUIZ");
         Scene scene = new Scene(root);
         //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setWidth(400);
-        stage.setHeight(350);
+        stage.setWidth(600);
+        stage.setHeight(500);
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
     }
