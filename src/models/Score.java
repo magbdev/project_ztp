@@ -33,4 +33,8 @@ public Score()
     public void setScore(Integer score) {
         this.score = score;
     }
+
+    public String toString(){
+        return (name+ " " + score.toString());
+    }
 }

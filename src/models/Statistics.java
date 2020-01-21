@@ -1,20 +1,16 @@
-
 package models;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
+
 
 public class Statistics {
     private static Statistics instance = new Statistics();
@@ -24,30 +20,26 @@ public class Statistics {
         //}
         return instance;
     }
+
     @FXML
-    public TextField nameField = new TextField();
-    @FXML
-    public Button addScoreButton;
+    public ListView<Score> listView;
 
-    private static int result = 0;
 
-    public TableView<Score> scoreTable = new TableView<Score>();
-    public TableColumn<Score,String> nameColumn = new TableColumn<>("Imię");
-    public TableColumn<Score,Integer> scoreColumn = new TableColumn<>("Wynik");
+    ScoreBaseList scoreBaseList = new ScoreBaseList();
+    ArrayList<Score> listStatistics = scoreBaseList.getStatistics();
 
-    private ObservableList<Score> data = FXCollections.observableArrayList(
-            new Score("name",3)
-    );
+    private ObservableList<Score> data = FXCollections.observableArrayList(listStatistics);
 
-    public void setResult(int result){
+    /*public void setResult(int result){
         Statistics.result =result;
-    }
+    }*/
 
-    public void addScore(){
-        Score score = new Score(nameField.getText(),result);
+    public void addScore(String name, int result){
+        Score score = new Score(name,result);
         data.add(score);
-        scoreTable.setItems(data);
-        scoreTable.refresh();
+        listStatistics.add(score);
+        scoreBaseList.saveStatistics(listStatistics);
+
     }
 
     public void draw() throws IOException {
@@ -65,12 +57,7 @@ public class Statistics {
 
 
     public void initialize() {
-        scoreTable.setEditable(true);
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        scoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
-        scoreTable.getColumns().addAll(nameColumn,scoreColumn);
-        scoreTable.setItems(data);
-        scoreTable.refresh();
+        listView.setItems(data);
     }
 
 }
