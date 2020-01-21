@@ -6,12 +6,12 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddQuestionController">
    <children>
-      <TextField fx:id="questionField" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" text="Pytanie" StackPane.alignment="TOP_CENTER">
+      <TextField fx:id="questionField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" text="Pytanie" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
             <Insets top="20.0" />
          </StackPane.margin>
       </TextField>
-      <TextField fx:id="answerField" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" text="Poprawna odpowiedź" StackPane.alignment="TOP_CENTER">
+      <TextField fx:id="answerField" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="300.0" text="Poprawna odpowiedź" StackPane.alignment="TOP_CENTER">
          <StackPane.margin>
             <Insets top="70.0" />
          </StackPane.margin>

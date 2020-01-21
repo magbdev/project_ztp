@@ -9,52 +9,58 @@
    <top>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ENGLISH TEST" StackPane.alignment="TOP_CENTER">
+            <Text fill="#1108c2" strokeType="OUTSIDE" strokeWidth="0.0" text="ENGLISH TEST" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </StackPane.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz tryb gry" StackPane.alignment="TOP_CENTER">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz tryb gry" wrappingWidth="117.7578125" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="30.0" />
                </StackPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Text>
-            <Button fx:id="adventureButton" mnemonicParsing="false" onAction="#adventure" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
-               <StackPane.margin>
-                  <Insets top="50.0" />
-               </StackPane.margin>
-            </Button>
-            <Button fx:id="testButton" mnemonicParsing="false" text="TRYB TESTU" StackPane.alignment="TOP_CENTER" onAction="#test">
+            <Button fx:id="testButton" mnemonicParsing="false" onAction="#test" prefHeight="36.0" prefWidth="121.0" text="TRYB TESTU" StackPane.alignment="TOP_CENTER">
                <StackPane.margin>
                   <Insets top="90.0" />
+               </StackPane.margin>
+            </Button>
+            <Button fx:id="adventureButton" mnemonicParsing="false" onAction="#adventure" prefHeight="37.0" prefWidth="121.0" text="TRYB PRZYGODY" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="50.0" />
                </StackPane.margin>
             </Button>
          </children>
       </StackPane>
    </top>
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="200.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="487.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza pytań" />
-                  <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#addQuestion" text="Dodaj pytanie" />
-                  <Button fx:id="editQuestionButton" mnemonicParsing="false" onAction="#editQuestion" text="Edytuj pytanie" />
-                  <Button fx:id="deleteQuestionButton" mnemonicParsing="false" onAction="#deleteQuestion" text="Usuń pytanie" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza pytań" wrappingWidth="154.626953125" />
+                  <Button fx:id="addQuestionButton" mnemonicParsing="false" onAction="#addQuestion" prefHeight="41.0" prefWidth="151.0" text="Dodaj pytanie" />
+                  <Button fx:id="editQuestionButton" mnemonicParsing="false" onAction="#editQuestion" prefHeight="41.0" prefWidth="151.0" text="Edytuj pytanie" />
+                  <Button fx:id="deleteQuestionButton" mnemonicParsing="false" onAction="#deleteQuestion" prefHeight="41.0" prefWidth="150.0" text="Usuń pytanie" />
                </children>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox prefHeight="200.0" prefWidth="171.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza słówek" />
-                  <Button fx:id="addAnswerButton" mnemonicParsing="false" text="Dodaj słówko" onAction="#addAnswer" />
-                  <Button fx:id="editAnswerButton" mnemonicParsing="false" text="Edytuj słówko" onAction="#editAnswer"/>
-                  <Button fx:id="deleteAnswerButton" mnemonicParsing="false" text="Usuń słówko" onAction="#deleteAnswer"/>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Baza słówek" wrappingWidth="146.125" />
+                  <Button fx:id="addAnswerButton" mnemonicParsing="false" onAction="#addAnswer" prefHeight="41.0" prefWidth="151.0" text="Dodaj słówko" />
+                  <Button fx:id="editAnswerButton" mnemonicParsing="false" onAction="#editAnswer" prefHeight="41.0" prefWidth="151.0" text="Edytuj słówko" />
+                  <Button fx:id="deleteAnswerButton" mnemonicParsing="false" onAction="#deleteAnswer" prefHeight="41.0" prefWidth="151.0" text="Usuń słówko" />
                </children>
             </VBox>
          </children>
       </HBox>
    </center>
    <bottom>
-      <Button fx:id="addScoreButton" mnemonicParsing="false" onAction="#addscoreController" text="Statystyka" BorderPane.alignment="CENTER" />
+      <Button fx:id="addScoreButton" mnemonicParsing="false" onAction="#openStatistics" prefHeight="68.0" prefWidth="200.0" text="Statystyka" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>
