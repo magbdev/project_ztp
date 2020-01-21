@@ -44,6 +44,7 @@ public class ModeController {
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
     }

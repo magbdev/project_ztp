@@ -41,7 +41,7 @@ public class AddQuestionController {
         stage.setWidth(400);
         stage.setHeight(300);
         stage.initModality(Modality.APPLICATION_MODAL);
-
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
     }
@@ -56,6 +56,7 @@ public class AddQuestionController {
         listQuestion = list.getQuestions();
         listQuestion.add(q);
         list.saveQuestions(listQuestion);
+
 
     }
 
