@@ -17,7 +17,7 @@ public class MainWindowController extends Application {
 
 
     @FXML
-    private Button adventureButton,testButton,statisticButton,addQuestionButton,editQuestionButton,deleteQuestionButton,addAnswerButton,editAnswerButton,deleteAnswerButton,addScoreButton;
+    private Button adventureButton,testButton,statisticButton,addQuestionButton,editQuestionButton,deleteQuestionButton,addAnswerButton,editAnswerButton,deleteAnswerButton;
 
     public Statistics s = Statistics.getInstance();
     public AddQuestionController addQuestionController = new AddQuestionController();
@@ -78,6 +78,9 @@ public class MainWindowController extends Application {
         deleteAnswerController.open();
     }
 
+    public void addscoreController() throws IOException{
+        addScoreController.open();
+    }
     public static void main(String[] args) {
         launch(args);
 
